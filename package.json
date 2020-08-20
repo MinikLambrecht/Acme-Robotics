@@ -1,6 +1,6 @@
 {
-  "name": "baseplate-starter",
-  "version": "0.0.1",
+  "name": "acme-robotics",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.6.1",

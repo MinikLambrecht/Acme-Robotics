@@ -1,3 +1,3 @@
 /**
- * Contains all te fetch api test case
+ * Contains all the fetch api test case
  */

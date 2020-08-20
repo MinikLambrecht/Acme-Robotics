@@ -31,8 +31,3 @@ Goal of this folder is to create a common point for the sharable logics & api's 
 ### Why prefix - `x` ?
 
 `x` commonly mean cross sharing the resources.
-
-### Any suggestions?
-
-Raise a PR or issue. Happy to integrate ideas based on usecases.
-#### * ***Please follow the above rules. This file will be updated periodically. Keep visiting.***

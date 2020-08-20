@@ -1,11 +1,8 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import {
-  IonApp,
-  IonRouterOutlet,
-} from '@ionic/react';
+import { IonApp,IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import SimplePage from './pages/SimplePage/Loadable';
+import Home from './pages/Home/Loadable';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,11 +23,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+// Define app routes
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/home" component={SimplePage} exact={true} />
+        <Route path="/home" component={Home} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>

@@ -1,3 +1,6 @@
+/**
+ * Page
+ */
 import {
   IonCard,
   IonCardContent,
@@ -9,7 +12,8 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonButton
+  IonButton,
+  IonText
 } from '@ionic/react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -25,7 +29,7 @@ import saga from './saga';
 import { InferMappedProps, SubState } from './types';
 import { fetchSimpleApi } from './fetchapi';
 
-const SimplePage: React.FC<InferMappedProps> = ({ eProps, ...props }: InferMappedProps) => {
+const Home : React.FC<InferMappedProps> = ({ eProps, ...props }: InferMappedProps) => {
 
   /** 
    * Direct method implementation without SAGA 
@@ -39,52 +43,15 @@ const SimplePage: React.FC<InferMappedProps> = ({ eProps, ...props }: InferMappe
   }
 
   return (
-    <IonPage className={style["simple-page-module"]}>
+    <IonPage className={style["home"]}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>BasePlate Capability</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
-        <IonCard className="welcome-card">
-          <IonCardHeader>
-            <IonCardSubtitle>Redux data flow</IonCardSubtitle>
-            <IonCardTitle className={style['counter']}>{props.counter}</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonButton
-              expand="full"
-              onClick={() => eProps.onCount({ counter: props.counter + 1 })}
-              color="primary">Increment Counter</IonButton>
-          </IonCardContent>
-        </IonCard>
-
-        <IonCard>
-        <IonCardHeader>
-          <IonCardSubtitle>Redux - Saga data flow</IonCardSubtitle>
-          <IonCardTitle className={style['simple-resp']}>{props.msg}</IonCardTitle>
-        </IonCardHeader>
-        <IonCardContent>
-          <IonButton
-            expand="full"
-            onClick={() => eProps.onSimpleAjax()}
-            color="primary">Fetch Response</IonButton>
-        </IonCardContent>
-      </IonCard>
-
-      <IonCard>
-        <IonCardHeader>
-          <IonCardSubtitle>Direct Ajax data flow</IonCardSubtitle>
-          <IonCardTitle className={style['simple-resp']}>{msg}</IonCardTitle>
-        </IonCardHeader>
-        <IonCardContent>
-          <IonButton
-            expand="full"
-            onClick={() => simpleAjaxDirect()}
-            color="primary">Fetch Response</IonButton>
-        </IonCardContent>
-      </IonCard>
-
+        <IonText>Content of Home</IonText>
       </IonContent>
     </IonPage>
   );
@@ -112,7 +79,7 @@ export function mapDispatchToProps(dispatch: any) {
  * useInjectReducer & useInjectSaga
  */
 const withInjectedMode = injector(
-  SimplePage,
+  Home,
   {
     key: NameSpace,
     reducer,

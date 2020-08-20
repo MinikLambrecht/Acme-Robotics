@@ -12,7 +12,8 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonButton
+  IonButton,
+  IonText
 } from '@ionic/react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -45,49 +46,12 @@ const {{pascalcase compName}} : React.FC<InferMappedProps> = ({ eProps, ...props
     <IonPage className={style["{{toLowerCase compName}}"]}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>BasePlate Capability</IonTitle>
+          <IonTitle>{{compName}}</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
-        <IonCard className="welcome-card">
-          <IonCardHeader>
-            <IonCardSubtitle>Redux data flow</IonCardSubtitle>
-            <IonCardTitle className={style['counter']}>{props.counter}</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonButton
-              expand="full"
-              onClick={() => eProps.onCount({ counter: props.counter + 1 })}
-              color="primary">Increment Counter</IonButton>
-          </IonCardContent>
-        </IonCard>
-
-        <IonCard>
-        <IonCardHeader>
-          <IonCardSubtitle>Redux - Saga data flow</IonCardSubtitle>
-          <IonCardTitle className={style['simple-resp']}>{props.msg}</IonCardTitle>
-        </IonCardHeader>
-        <IonCardContent>
-          <IonButton
-            expand="full"
-            onClick={() => eProps.onSimpleAjax()}
-            color="primary">Fetch Response</IonButton>
-        </IonCardContent>
-      </IonCard>
-
-      <IonCard>
-        <IonCardHeader>
-          <IonCardSubtitle>Direct Ajax data flow</IonCardSubtitle>
-          <IonCardTitle className={style['simple-resp']}>{msg}</IonCardTitle>
-        </IonCardHeader>
-        <IonCardContent>
-          <IonButton
-            expand="full"
-            onClick={() => simpleAjaxDirect()}
-            color="primary">Fetch Response</IonButton>
-        </IonCardContent>
-      </IonCard>
-
+        <IonText>Content of {{compName}}</IonText>
       </IonContent>
     </IonPage>
   );

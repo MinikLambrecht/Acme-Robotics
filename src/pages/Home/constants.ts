@@ -1,10 +1,13 @@
+/**
+ * Shared constants
+ */
 import baseConst from '../../shared-base/xconstants';
 
 /** 
  * Base Namespace for the page
  * Use it wisely, as it affects your pagename
  */
-export const NameSpace = 'SimplePage';
+export const NameSpace = 'Home';
 
 /*** 
  * Action Definitions - START 

@@ -11,7 +11,7 @@
  * Read readme.md for more details
  */
 
-import { fetchSimpleApi } from 'src/pages/SimplePage/fetchapi';
+import { fetchSimpleApi } from 'src/pages/Home/fetchapi';
 
 export {
     fetchSimpleApi

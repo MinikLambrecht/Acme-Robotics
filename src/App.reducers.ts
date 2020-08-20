@@ -24,7 +24,8 @@ export const initialState = {
  */
 const appReducer = (state = initialState, action: APP_ACTION) =>
   produce(state, draft => {
-    switch (action.type) {
+    switch (action.type) 
+    {
       case APP_CONST.LOAD_REPOS:
         draft.loading = true;
         draft.error = false;
