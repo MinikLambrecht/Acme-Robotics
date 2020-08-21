@@ -1,5 +1,7 @@
 {
-  "name": "acme-robotics",
-  "integrations": {},
+  "name": "robotics",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
