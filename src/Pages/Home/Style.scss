@@ -3,8 +3,45 @@
 }
 
 .col {
-    border-color: ;
+    border-color: --ion-color-primary;
     border-style: solid;
     border-radius: 5px;
-    background: darkred;
+    background: --ion-color-primary-shade;
+}
+
+.subtitle {
+    text-transform: capitalize;
+}
+
+.my-custom-class .modal-wrapper {
+    background: #222;
+  }
+
+.closeModalButton {
+    display: flex;
+    margin: auto;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 25vw;
+}
+
+ion-textarea {
+    height: 30vh;
+}
+
+.inputSize {
+    ion-item {
+        display: flex;
+        margin: auto;
+        width: 75vw;
+        
+        --border-color: transparent!important;
+        --highlight-height: 0;
+        border: 1px solid var(--ion-color-primary);
+        border-radius: 4px;
+
+        &.item-has-focus {
+            border: 1px solid #dedede;
+        }
+    }
 }

@@ -1,9 +1,36 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonLabel } from '@ionic/react';
-import ExploreContainer from '../../Components/ExploreContainer';
+import React, { useState } from 'react';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar, 
+  IonItem, 
+  IonButton, 
+  IonCard, 
+  IonCardContent, 
+  IonCardHeader, 
+  IonCardSubtitle, 
+  IonCardTitle, 
+  IonIcon, 
+  IonLabel, 
+  IonModal, 
+  IonInput, 
+  IonTextarea
+} from '@ionic/react';
 import './Style.scss';
+import { Console } from 'console';
 
 const Home: React.FC = () => {
+
+  function setShowModal(show: boolean) {
+    //Gather data and insert into modal
+
+
+    setModal(show);
+  }
+
+  const [showModal, setModal] = useState(false);
   return (
     <IonPage>
       <IonContent fullscreen color="primary">
@@ -13,22 +40,46 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-        <IonCard>
+        <IonCard color="tertiary">
           <IonCardHeader>
-            <IonCardTitle>Card Title</IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardTitle>Broken PC</IonCardTitle>
+            <IonCardSubtitle class="subtitle">ID: 5423 (Priority 1)</IonCardSubtitle>
           </IonCardHeader>
 
-          <IonItem>
-            <IonLabel>ion-item in a card, icon left, button right</IonLabel>
-            <IonButton fill="outline" slot="end">View</IonButton>
+          <IonItem color="tertiary">
+            <IonLabel>
+              The PC belonging to our CEO will no longer start up and keeps turning on and off
+            </IonLabel>
+            <IonButton fill="outline" slot="end" onClick={() => setShowModal(true)}>View inquiry</IonButton>
           </IonItem>
-
-          <IonCardContent>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </IonCardContent>
         </IonCard>
+
+        <IonModal isOpen={showModal} cssClass='my-custom-class'>
+          <IonContent fullscreen color="primary" class="inputSize">
+            <IonButton class="closeModalButton" onClick={() => setShowModal(false)} color="danger">Close</IonButton>
+            
+            <IonItem color="tertiary">
+              <IonLabel position="floating">Title</IonLabel>
+              <IonInput type="text" value="Broken PC" readonly></IonInput>
+            </IonItem>
+            <br/>
+            <IonItem color="tertiary">
+              <IonLabel position="floating">E-Mail</IonLabel>
+              <IonInput type="email" value="lol@mail.fake" readonly></IonInput>
+            </IonItem>
+            <br/>
+            <IonItem color="tertiary">
+              <IonLabel position="floating">Role</IonLabel>
+              <IonInput type="text" value="CEO" readonly></IonInput>
+            </IonItem>
+            <br/>
+            <IonItem color="tertiary">
+              <IonLabel position="floating">Description</IonLabel>
+              <IonTextarea value="The PC belonging to our CEO will no longer start up and keeps turning on and off" readonly></IonTextarea>
+            </IonItem>
+            
+          </IonContent>
+        </IonModal>
       </IonContent>
     </IonPage>
   );
