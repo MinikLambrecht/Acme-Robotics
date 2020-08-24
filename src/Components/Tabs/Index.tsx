@@ -8,59 +8,26 @@ import { home, personCircle } from 'ionicons/icons';
 import HomePage from '../../Pages/Home/Content';
 import LoginPage from '../../Pages/Login/Content';
 
-interface IRoute {
-    title: string; 
-    link: string; 
-    exact: boolean; 
-    component: React.FC;
-    icon: any;
-}
-
-let routes: Array<IRoute> = [
-    {
-        title: 'Home',
-        link: '/Home',
-        exact: true,
-        component: HomePage,
-        icon: home
-    },
-    {
-        title: 'Login',
-        link: '/Login',
-        exact: true,
-        component: LoginPage,
-        icon: personCircle
-    }
-]
-
-function ReturnRoutes() {
-    routes.forEach(route => {
-        return( <Route path={route.link} component={route.component} exact={route.exact} /> );
-    });
-}
-
-function ReturnTabItems() {
-    routes.forEach(item => {
-        return(
-        <IonTabButton tab={item.title} href={item.link}>
-            <IonIcon icon={item.icon} />
-            <IonLabel>{item.title}</IonLabel>
-        </IonTabButton>);
-    });
-}
-
-const Tabs = ({routes}) => (
+const Tabs = () => (
     <IonReactRouter>
         <IonTabs>
 
             <IonRouterOutlet>
-                {}
-                {console.log(ReturnRoutes)}
+                <Route path="/Home" component={HomePage} exact={true} />
+                <Route path="/Login" component={LoginPage} exact={true} />
                 <Route path="/" render={() => <Redirect to="/Home" />} exact={true} />
             </IonRouterOutlet>
 
             <IonTabBar slot="bottom" color="secondary">
-                {ReturnTabItems}
+                <IonTabButton tab="Home" href="/Home">
+                    <IonIcon icon={home} />
+                    <IonLabel>Home</IonLabel>
+                </IonTabButton>
+
+                <IonTabButton tab="Login" href="/Login">
+                    <IonIcon icon={personCircle} />
+                    <IonLabel>Login</IonLabel>
+                </IonTabButton>
             </IonTabBar>
 
         </IonTabs>
