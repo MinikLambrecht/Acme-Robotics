@@ -1,0 +1,30 @@
+.CustomContainer {
+    margin: 0;
+}
+
+.InputSize {
+    margin: 0 auto;
+    width: 75vw;
+    position: relative;
+    ion-item {
+        --border-color: transparent!important;
+        --highlight-height: 0;
+        border: 1px solid #dedede;
+        border-radius: 4px;
+
+        &.item-has-focus {
+            border: 1px solid var(--ion-color-primary);
+        }
+
+        ion-label {
+            color: #807e7e!important;
+            font-weight: 300;
+            font-size: 1rem!important;
+        }
+    }
+}
+
+.CustomButton {
+    margin: 1vh auto;
+    width: 70vw;
+}

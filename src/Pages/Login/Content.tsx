@@ -1,23 +1,32 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../../Components/ExploreContainer';
-import './Style.css';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonButton, IonItemGroup } from '@ionic/react';
+import './Style.scss';
 
 const Login: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
+        <IonToolbar color="secondary">
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Content of Login</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Login page" />
+      <IonContent fullscreen color="primary">
+        <IonItemGroup className="CustomContainer">
+
+          <IonItem color="primary" className="InputSize">
+            <IonLabel position="floating">E-mail</IonLabel>
+            <IonInput type="email" />
+          </IonItem>
+
+          <IonItem color="primary" className="InputSize">
+            <IonLabel position="floating">Password</IonLabel>
+            <IonInput type="password" />
+          </IonItem>
+          
+          <IonButton className="CustomButton" size="default" color="light" expand="block">
+            Login
+          </IonButton>
+        </IonItemGroup>
       </IonContent>
     </IonPage>
   );
