@@ -23,7 +23,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './theme/variables.css';
+import './theme/variables.scss';
 
 const App: React.FC = () => (
   <IonApp>
@@ -34,7 +34,7 @@ const App: React.FC = () => (
           <Route path="/Login" component={Login} exact={true}/>
           <Route path="/" render={() => <Redirect to="/Home" />} exact={true} />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" color="secondary">
           <IonTabButton tab="Home" href="/Home">
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
