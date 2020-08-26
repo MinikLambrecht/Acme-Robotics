@@ -9,31 +9,135 @@
     background: --ion-color-primary-shade;
 }
 
+.modal-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+ion-card-header {
+    ion-card-title {
+        font-size: 6vw;
+    }
+    ion-card-subtitle {
+        font-size: 4vw;
+        font-weight: 200;
+    }
+}
+
+.desItem {
+    .description {
+        font-size: 5vw;
+        font-weight: 100;
+        text-transform: capitalize;
+
+        @media (min-width: 500px) {
+            @media (max-width: 700px) {
+                font-size: 4vw;
+              }
+          }
+        @media (min-width: 1000px) {
+            font-size: 3vw;
+        }
+    }
+}
+
+.viewButton {
+    width: 20vw;
+    height: 5vh;
+    font-weight: 600;
+    font-size: 4vw;
+    border-width: 1vw;
+
+    @media (min-width: 900px) {
+        width: 10vw;
+        font-size: 2vw;
+      }
+}
+
+ion-title {
+    width: auto;
+}
+
 .subtitle {
     text-transform: capitalize;
 }
 
-.my-custom-class .modal-wrapper {
-    background: #222;
-  }
-
-.closeModalButton {
+.closeModalButton{
     display: flex;
     margin: auto;
     padding-top: 1vw;
     padding-bottom: 1vw;
     width: 25vw;
+
+    @media (min-height: 900px) {
+        height: 5vh;
+        font-size: 3vw;
+    }
+}
+
+.textItem {
+    .textItemLabel {
+        font-weight: 600;
+
+        @media (min-width: 700px) {
+            font-size: 3.5vw;
+        }
+    }
+    .textItemInput {
+        @media (min-width: 900px) {
+            font-size: 3vw;
+        }
+    }
+    .textItemArea {
+        @media (min-width: 900px) {
+            font-size: 3vw;
+        }
+    }
+}
+
+.finishCaseButton {
+    display: flex;
+    margin: auto;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 25vw;
+
+    @media (min-height: 900px) {
+        height: 10vh;
+        font-size: 4vw;
+      }
+}
+
+.ongoingCaseButton {
+    display: flex;
+    margin: auto;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    width: 25vw;
+
+    @media (min-height: 900px) {
+        height: 10vh;
+        font-size: 4vw;
+      }
 }
 
 ion-textarea {
     height: 30vh;
 }
 
+hr {
+    width: 98vw;
+    border-width: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(53,136,167,1) 50%, rgba(0,0,0,0) 100%);
+}
+
 .inputSize {
     ion-item {
         display: flex;
         margin: auto;
-        width: 75vw;
+        width: 95vw;
         
         --border-color: transparent!important;
         --highlight-height: 0;
