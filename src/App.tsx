@@ -1,10 +1,8 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import { home, personCircle } from 'ionicons/icons';
-import Home from './Pages/Home/Content';
-import Login from './Pages/Login/Content';
+
+import { IonApp } from '@ionic/react';
+
+import TabMenu from './Components/Tabs/Index'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -27,26 +25,8 @@ import './theme/variables.scss';
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/Home" component={Home} exact={true} />
-          <Route path="/Login" component={Login} exact={true}/>
-          <Route path="/" render={() => <Redirect to="/Home" />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom" color="secondary">
-          <IonTabButton tab="Home" href="/Home">
-            <IonIcon icon={home} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
-
-          <IonTabButton tab="Login" href="/Login">
-            <IonIcon icon={personCircle} />
-            <IonLabel>Login</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
+    {console.log(TabMenu)}
+    <TabMenu />
   </IonApp>
 );
 
