@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "robotics",
+  "appName": "acme-robotics",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
