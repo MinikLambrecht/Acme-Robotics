@@ -30,13 +30,13 @@
       "email": "AngryChief@run.now",
       "role": "CTO",
       "description": "Suscipit tellus mauris a diam maecenas sed enim ut sem"
-    }
+    },
     {
       "id": 3,
       "title": "Where is the toilet",
       "email": "trolled@you.haha",
       "role": "Office Worker",
       "description": "Scelerisque fermentum dui faucibus in ornare quam viverra orci"
-    },
+    }
   ]
 }
