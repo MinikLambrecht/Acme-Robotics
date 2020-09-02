@@ -38,16 +38,18 @@ class Login extends React.Component {
             <IonCardContent color="primary">
               {!hidden 
               ? 
-              <IonItem className="test" color="tertiary">
-                <IonLabel className="ErrorLabel" type="text" color="danger">
-                  E-mail or Password is wrong!
-                </IonLabel>
+                <IonItem className="test" color="tertiary">
+                  <IonLabel className="ErrorLabel" type="text" color="danger">
+                    E-mail or Password is wrong!
+                  </IonLabel>
 
-                <IonBadge color="primary">
-                  x{this.state.attempts}
-                </IonBadge>
-              </IonItem>
-              : "" }
+                  <IonBadge color="primary">
+                    x{this.state.attempts}
+                  </IonBadge>
+                </IonItem>
+              : 
+                "" 
+              }
               
               <IonList color="dark" className="Container">
 

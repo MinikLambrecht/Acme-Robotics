@@ -24,10 +24,7 @@ const Tabs = () => (
                     <IonLabel>Home</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="Login" href="/Login">
-                    <IonIcon icon={personCircle} />
-                    <IonLabel>Login</IonLabel>
-                </IonTabButton>
+                ionic integrations enable capacitor
             </IonTabBar>
 
         </IonTabs>
