@@ -16,16 +16,30 @@ import {
   IonLabel, 
   IonModal, 
   IonInput, 
-  IonTextarea
+  IonTextarea,
+  IonItemDivider,
+  IonGrid,
+  IonCol,
+  IonRow
 } from '@ionic/react';
 import './Style.scss';
 import { Console } from 'console';
 
 const Home: React.FC = () => {
 
-  function setShowModal(show: boolean) {
-    //Gather data and insert into modal
+  function dismissModal() {
+    setModal(false);
+  }
 
+  function setShowModal(show: boolean, active: boolean , finish: boolean) {
+    //Gather data and insert into modal
+    if (finish) {
+
+    }
+    else if (active)
+    {
+
+    }
 
     setModal(show);
   }
@@ -36,7 +50,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen color="primary">
         <IonHeader collapse="condense">
           <IonToolbar color="secondary">
-            <IonTitle>Logged in as [User].</IonTitle>
+            <IonTitle>Logget ind som [Bruger].</IonTitle>
           </IonToolbar>
         </IonHeader>
 
@@ -46,38 +60,70 @@ const Home: React.FC = () => {
             <IonCardSubtitle class="subtitle">ID: 5423 (Priority 1)</IonCardSubtitle>
           </IonCardHeader>
 
-          <IonItem color="tertiary">
-            <IonLabel>
-              The PC belonging to our CEO will no longer start up and keeps turning on and off
+          <IonItem color="tertiary" class="desItem">
+            <IonLabel class="description">
+                The PC belonging to our CEO will no longer start up and keeps turning on and off
             </IonLabel>
-            <IonButton fill="outline" slot="end" onClick={() => setShowModal(true)}>View inquiry</IonButton>
+            <IonButton class="viewButton" fill="outline" slot="end" onClick={() => setShowModal(true, false, false)}>Se sag</IonButton>
           </IonItem>
+          
         </IonCard>
 
-        <IonModal isOpen={showModal} cssClass='my-custom-class'>
+        <IonModal isOpen={showModal} id="CaseInfoModal" cssClass="modal" onDidDismiss={() => dismissModal()}>
           <IonContent fullscreen color="primary" class="inputSize">
-            <IonButton class="closeModalButton" onClick={() => setShowModal(false)} color="danger">Close</IonButton>
-            
-            <IonItem color="tertiary">
-              <IonLabel position="floating">Title</IonLabel>
-              <IonInput type="text" value="Broken PC" readonly></IonInput>
+            <br/>
+            <IonButton class="closeModalButton" onClick={() => setShowModal(false, false, false)} color="danger">Luk</IonButton>
+            <hr/>
+            <br/>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">Prioritet</IonLabel>
+              <IonInput class="textItemInput" type="text" value="1" readonly></IonInput>
             </IonItem>
             <br/>
-            <IonItem color="tertiary">
-              <IonLabel position="floating">E-Mail</IonLabel>
-              <IonInput type="email" value="lol@mail.fake" readonly></IonInput>
+            <IonItem color="tertiary"  class="textItem">
+              <IonLabel class="textItemLabel" position="floating">Titel</IonLabel>
+              <IonInput class="textItemInput" type="text" value="Broken PC" readonly></IonInput>
             </IonItem>
             <br/>
-            <IonItem color="tertiary">
-              <IonLabel position="floating">Role</IonLabel>
-              <IonInput type="text" value="CEO" readonly></IonInput>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">E-Mail</IonLabel>
+              <IonInput class="textItemInput" type="email" value="lol@mail.fake" readonly></IonInput>
             </IonItem>
             <br/>
-            <IonItem color="tertiary">
-              <IonLabel position="floating">Description</IonLabel>
-              <IonTextarea value="The PC belonging to our CEO will no longer start up and keeps turning on and off" readonly></IonTextarea>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">Rolle</IonLabel>
+              <IonInput class="textItemInput" type="text" value="CEO" readonly></IonInput>
             </IonItem>
-            
+            <br/>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">Beskrivelse</IonLabel>
+              <IonTextarea class="textItemArea" rows={4} cols={20} value="The PC belonging to our CEO will no longer start up and keeps turning on and off" readonly></IonTextarea>
+            </IonItem>
+            <br/>
+            <hr/>
+            <br/>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">Løsning</IonLabel>
+              <IonInput class="textItemInput" type="text" value=""></IonInput>
+            </IonItem>
+            <br/>
+            <IonItem color="tertiary" class="textItem">
+              <IonLabel class="textItemLabel" position="floating">WIP</IonLabel>
+              <IonInput class="textItemInput" type="text" value=""></IonInput>
+            </IonItem>
+            <br/>
+            <hr/>
+            <IonGrid>
+              <IonRow>
+                <IonCol>
+                  <IonButton class="ongoingCaseButton" onClick={() => setShowModal(false, true, false)} color="warning">Igang</IonButton>
+                </IonCol>
+                <IonCol>
+                  <IonButton class="finishCaseButton" onClick={() => setShowModal(false, false, true)} color="success">Færdig</IonButton>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+            <br/>
           </IonContent>
         </IonModal>
       </IonContent>

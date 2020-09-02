@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "Bobby",
+      "password": "hka3PVPJ2_x^Uq@E"
+    },
+    {
+      "id": 2,
+      "email": "John",
+      "password": "Eg*J%w6E_EcE^jrZ"
+    },
+    {
+      "id": 3,
+      "email": "Peter",
+      "password": "#5k+u!wF2=xSDjPx"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "PC broke",
+      "email": "Rip@its.dead",
+      "role": "CEO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "id": 2,
+      "title": "Coffee MIA!?",
+      "email": "AngryChief@run.now",
+      "role": "CTO",
+      "description": "Suscipit tellus mauris a diam maecenas sed enim ut sem"
+    },
+    {
+      "id": 3,
+      "title": "Where is the toilet",
+      "email": "trolled@you.haha",
+      "role": "Office Worker",
+      "description": "Scelerisque fermentum dui faucibus in ornare quam viverra orci"
+    }
+  ]
+}
