@@ -21,6 +21,7 @@ class Login extends React.Component {
     }));
   }
 
+
   render() {
     const hidden = this.state.isHidden;
 
@@ -33,11 +34,11 @@ class Login extends React.Component {
         </IonHeader>
 
         <IonContent fullscreen color="primary">
-          
+
           <IonCard color="tertiary">
             <IonCardContent color="primary">
-              {!hidden 
-              ? 
+              {!hidden
+              ?
                 <IonItem className="test" color="tertiary">
                   <IonLabel className="ErrorLabel" type="text" color="danger">
                     E-mail or Password is wrong!
@@ -47,10 +48,10 @@ class Login extends React.Component {
                     x{this.state.attempts}
                   </IonBadge>
                 </IonItem>
-              : 
-                "" 
+              :
+                ""
               }
-              
+
               <IonList color="dark" className="Container">
 
                 <IonItem color="tertiary" className="InputSize">
@@ -61,16 +62,16 @@ class Login extends React.Component {
                 <IonItem color="tertiary" className="InputSize">
                   <IonLabel position="floating">Password</IonLabel>
                   <IonInput type="password" required={true} />
-                </IonItem>          
+                </IonItem>
               </IonList>
-
-              <IonButton className="SignInButton" type="button" size="default" onClick={this.handleClick} color="success">
+              <IonButton className="SignInButton"  type="button" size="default" onClick={this.handleClick} color="success">
                   Sign In
               </IonButton>
 
               <IonButton className="SignUpButton" type="button" size="default" color="medium">
                   Sign Up
               </IonButton>
+
             </IonCardContent>
           </IonCard>
         </IonContent>

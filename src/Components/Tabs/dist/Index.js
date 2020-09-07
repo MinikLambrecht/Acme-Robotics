@@ -17,5 +17,7 @@ var Tabs = function () { return (react_1["default"].createElement(react_router_1
             react_1["default"].createElement(react_2.IonTabButton, { tab: "Home", href: "/Home" },
                 react_1["default"].createElement(react_2.IonIcon, { icon: icons_1.home }),
                 react_1["default"].createElement(react_2.IonLabel, null, "Home")),
-            "ionic integrations enable capacitor")))); };
+                react_1["default"].createElement(react_2.IonTabButton, { tab: "Login", href: "/Login" },
+        react_1["default"].createElement(react_2.IonIcon, { icon: icons_1.personCircle }),
+        react_1["default"].createElement(react_2.IonLabel, null, "Login")))))); };
 exports["default"] = Tabs;

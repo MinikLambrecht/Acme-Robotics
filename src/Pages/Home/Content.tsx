@@ -27,6 +27,8 @@ import { Console } from 'console';
 
 const Home: React.FC = () => {
 
+  
+
   function dismissModal() {
     setModal(false);
   }
@@ -45,6 +47,7 @@ const Home: React.FC = () => {
   }
 
   const [showModal, setModal] = useState(false);
+  
   return (
     <IonPage>
       <IonContent fullscreen color="primary">
